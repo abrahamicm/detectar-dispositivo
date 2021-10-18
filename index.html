@@ -1,18 +1,78 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>hola</title>
+	<title>Detectar dispositivo</title>
+
+	<link rel="stylesheet" type="text/css" href="./dist/css/bootstrap.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">¿Desear abrir la  aplicación?</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <img src="./img/img.jpg" class="img-fluid text-center">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Continuar en Web</button>
+        <a  class="btn btn-primary" href="#" id="ir-app">Ir a la app</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript" src="./assets/js/vendor/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="./dist/js/bootstrap.min.js"></script>
+
+
 <script type="text/javascript"> var device = navigator.userAgent
+
+
  
 var IS_IPAD = navigator.userAgent.match(/iPad/i) != null,
 IS_IPHONE = !IS_IPAD && ((navigator.userAgent.match(/iPhone/i) != null) || (navigator.userAgent.match(/iPod/i) != null)),
 IS_IOS = IS_IPAD || IS_IPHONE,
 IS_ANDROID = !IS_IOS && navigator.userAgent.match(/android/i) != null,
-IS_MOBILE = IS_IOS || IS_ANDROID;
+IS_MOBILE = IS_IOS || IS_ANDROID
+enlace ="",
 
-alert(IS_MOBILE);
+
+
+//alert(IS_MOBILE);
+
+
+
+$( document ).ready(function() {
+  if (IS_IOS){
+    var link =document.querySelector("#ir-app")
+    link.href= enlace
+    enlace ="https://play.google.com/",
+    $('#myModal').modal('show')
+
+  }
+
+   if (IS_ANDROID){
+    var link =document.querySelector("#ir-app")
+    enlace="https://www.apple.com/store"
+    link.href= enlace
+    $('#myModal').modal('show')
+
+  }
+    
+  
+  
+});
 </script>
+
 </body>
 </html>
