@@ -24,7 +24,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Continuar en Web</button>
-        <button type="button" class="btn btn-primary">Ir a la app</button>
+        <a  class="btn btn-primary" href="#" id="ir-app">Ir a la app</a>
       </div>
     </div>
   </div>
@@ -43,7 +43,7 @@ IS_IPHONE = !IS_IPAD && ((navigator.userAgent.match(/iPhone/i) != null) || (navi
 IS_IOS = IS_IPAD || IS_IPHONE,
 IS_ANDROID = !IS_IOS && navigator.userAgent.match(/android/i) != null,
 IS_MOBILE = IS_IOS || IS_ANDROID
-ENLACE_IO ="",
+enlace ="",
 
 
 
@@ -52,7 +52,24 @@ ENLACE_IO ="",
 
 
 $( document ).ready(function() {
+  if (IS_IOS){
+    var link =document.querySelector("#ir-app")
+    link.href= enlace
+    enlace ="https://play.google.com/",
     $('#myModal').modal('show')
+
+  }
+
+   if (IS_ANDROID){
+    var link =document.querySelector("#ir-app")
+    enlace="https://www.apple.com/store"
+    link.href= enlace
+    $('#myModal').modal('show')
+
+  }
+    
+  
+  
 });
 </script>
 
