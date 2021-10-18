@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>hola</title>
+	<title>Detectar dispositivo</title>
 
 	<link rel="stylesheet" type="text/css" href="./dist/css/bootstrap.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
 
@@ -55,14 +56,15 @@ $( document ).ready(function() {
   if (IS_IOS){
     var link =document.querySelector("#ir-app")
     link.href= enlace
-    enlace ="https://play.google.com/",
+  
+     enlace="https://www.apple.com/store"
     $('#myModal').modal('show')
 
   }
 
    if (IS_ANDROID){
     var link =document.querySelector("#ir-app")
-    enlace="https://www.apple.com/store"
+     enlace ="https://play.google.com/"
     link.href= enlace
     $('#myModal').modal('show')
 
