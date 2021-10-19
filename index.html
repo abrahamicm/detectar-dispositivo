@@ -57,7 +57,7 @@ $( document ).ready(function() {
     var link =document.querySelector("#ir-app")
     link.href= enlace
   
-     enlace="https://play.google.com/store/apps/details?id=com.ivoo.android"
+     enlace="https://www.apple.com/store"
     $('#myModal').modal('show')
 
   }
@@ -69,8 +69,14 @@ $( document ).ready(function() {
     $('#myModal').modal('show')
 
   }
-    
-  
+
+ 
+  ("#ir-app").click(function(){
+    alert()
+const url = "intent://instagram.com/#Intent;scheme=https;package=com.instagram.android;end";
+window.location.replace(url);
+
+  })
   
 });
 </script>
