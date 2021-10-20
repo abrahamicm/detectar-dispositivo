@@ -53,29 +53,29 @@ enlace ="",
 
 
 $( document ).ready(function() {
+
   if (IS_IOS){
-    var link =document.querySelector("#ir-app")
-    //link.href= enlace
-  
-    // enlace="https://www.apple.com/store"
     $('#myModal').modal('show')
-
   }
-
-   if (IS_ANDROID){
-    var link =document.querySelector("#ir-app")
-     //enlace ="https://play.google.com/store/apps/details?id=com.ivoo.android"
-   // link.href= enlace
+  else if (IS_ANDROID){
     $('#myModal').modal('show')
-
   }
 
  
   $("#ir-app").click(function(){
-   
-//const url = "intent://instagram.com/#Intent;scheme=https;package=com.instagram.android;end";
-const url = "intent://ivoo.com/#Intent;scheme=https;package=com.instagram.ivoo;end";
-window.location.replace(url);
+
+    if(IS_IOS){
+      var url = "https://apps.apple.com/ve/app/ivoo/id1479559802?ls=1";
+      window.location.replace(url);
+
+    }
+    else if(IS_ANDROID){
+      var url = "intent://ivoo.com/#Intent;scheme=https;package=com.instagram.ivoo;end";
+      window.location.replace(url);
+
+    }
+
+
 
   })
   
